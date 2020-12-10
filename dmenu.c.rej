@@ -1,11 +1,24 @@
---- dmenu.c
-+++ dmenu.c
-@@ -26,7 +26,7 @@
+--- dmenu.c	2020-04-04 10:27:43.888026309 +0200
++++ dmenu.c	2019-02-02 13:55:02.000000000 +0100
+@@ -26,9 +26,7 @@
  #define TEXTW(X)              (drw_fontset_getwidth(drw, (X)) + lrpad)
  
  /* enums */
--enum { SchemeNorm, SchemeSel, SchemeOut, SchemeLast }; /* color schemes */
-+enum { SchemeNorm, SchemeSel, SchemeOut, SchemeMid, SchemeLast }; /* color schemes */
+-enum { SchemeNorm, SchemeSel, SchemeNormHighlight, SchemeSelHighlight,
+-       SchemeOut, SchemeLast }; /* color schemes */
+-
++enum { SchemeNorm, SchemeSel, SchemeOut, SchemeLast }; /* color schemes */
  
  struct item {
  	char *text;
+@@ -125,9 +83,7 @@ drawitem(struct item *item, int x, int y
+ 	else
+ 		drw_setscheme(drw, scheme[SchemeNorm]);
+ 
+-	r = drw_text(drw, x, y, w, bh, lrpad / 2, item->text, 0);
+-	drawhighlights(item, x, y, w);
+-	return r;
++	return drw_text(drw, x, y, w, bh, lrpad / 2, item->text, 0);
+ }
+ 
+ static void
