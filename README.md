@@ -3,7 +3,7 @@ dmenu - dynamic menu
 dmenu is an efficient dynamic menu for X.
 
 
-In This Build Of dmenu
+Keys
 ---
 
     Use ctrl+vim keys to select suggestions.
