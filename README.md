@@ -1,4 +1,4 @@
-dmenu - dynamic menu
+dmenu - dynamic menu Version:5.1
 ---
 dmenu is an efficient dynamic menu for X.
 
